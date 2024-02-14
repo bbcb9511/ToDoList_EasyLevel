@@ -1,0 +1,60 @@
+/* グローバルルール */
+button{
+    margin: 5px 20px;
+}
+
+select{
+    margin: 5px 5px;
+    padding: 3px 3px;
+}
+
+label{
+    margin-right: 10px;
+}
+
+li{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ローカルルール */
+
+.area-input{
+    background-color: rgb(203, 225, 253);
+    border-radius: 15px;
+    margin: 10px 5px;
+    padding: 5px 10px 10px 20px;
+}
+
+.area-summary{
+    background-color: rgb(215, 248, 207);
+    border-radius: 15px;
+    margin: 10px 5px;
+    padding: 5px 10px 10px 20px;
+}
+
+.list{
+    margin: 25px 0px;
+    padding-top: 10px;
+    border-top: 1px solid black;
+}
+
+.list-element{
+    display: flex;
+    align-items: center;
+}
+
+.list-element-detail{
+    margin-left: 25px;
+}
+
+.title{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.input-element{
+    margin: 10px 20px;
+}
+
