@@ -4,14 +4,18 @@ import style from './App.module.css'
 
 function App() {
 
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState([])
 
   const [formData, setFormData] = useState({})
 
+  // 新規ToDoに割り振るIDを格納するためのステート
+  const [newTodoId, setNewTodoId] = useState(1)
+
 
   const insertTodo = (todo) => {
-    const newTodoList = [...todoList, formData]
+    const newTodoList = [...todoList, {id: newTodoId, ...formData}]
     setTodoList(newTodoList)
+    setNewTodoId(val => val + 1)
   }
 
   const changedFromData = (event) => {
@@ -21,8 +25,8 @@ function App() {
     console.log(newFormData)
   }
 
-  const deleteTodo = (deleteIndex) => {
-    const newTodoList = todoList.filter(((todo, index) => index !== deleteIndex))
+  const deleteTodo = (targetTodo) => {
+    const newTodoList = todoList.filter(((todo) => todo.id !== targetTodo.id))
     setTodoList(newTodoList)
   }
 
@@ -60,8 +64,8 @@ function App() {
             return(
               <div className={style['list']}>
                 <div className={style['list-element']}>
-                  <li key={index}>{todo.title}</li>
-                  <button onClick={() =>deleteTodo(index)}>削除</button>
+                  <li key={todo.id}>{todo.title}</li>
+                  <button onClick={() =>deleteTodo(todo)}>削除</button>
                 </div>
                 <div className={style['list-element-detail']}>
                   <label>【ステータス】</label>
